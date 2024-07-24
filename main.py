@@ -1,3 +1,7 @@
 from db_connect import get_connection
+import queries
 
-get_connection()
+mydb = get_connection()
+cursor = mydb.cursor()
+cursor.execute(queries.first_match_cards)
+print(cursor.fetchall())

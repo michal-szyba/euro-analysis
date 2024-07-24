@@ -10,3 +10,4 @@ def get_connection():
     )
     if connection.is_connected():
         print('Connected succesfully')
+        return connection
