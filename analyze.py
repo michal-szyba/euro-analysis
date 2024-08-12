@@ -12,13 +12,13 @@ match_order = ['I mecz grupowy',
                'finał']
 
 
-def analyze():
-    query_results_cards = fetch_results(queries.cards_by_match_category)
+def analyze(year):
+    query_results_cards = fetch_results(queries.cards_by_match_category, year)
     results_cards = [(match_category, float(cards_sums)) for match_category, cards_sums in query_results_cards]
     sorted_results_cards = sorted(results_cards, key=lambda x: match_order.index(x[0]), )
     match_categories, cards_sums = zip(*sorted_results_cards)
 
-    query_results_fouls = fetch_results(queries.fouls_by_match_category)
+    query_results_fouls = fetch_results(queries.fouls_by_match_category, year)
     results_fouls = [(match_category, float(fouls_sums)) for match_category, fouls_sums in query_results_fouls]
     sorted_results_fouls = sorted(results_fouls, key=lambda x: match_order.index(x[0]), )
     _, fouls_sums = zip(*sorted_results_fouls)

@@ -1,2 +1,2 @@
 from analyze import analyze
-analyze()
+analyze(2024)
