@@ -10,3 +10,8 @@ cards_by_match_category = ("SELECT match_category, AVG(yellow_cards_sum) "
                            "FROM csv_Meczyki_euro "
                            "GROUP BY match_category "
                            "ORDER BY match_category")
+fouls_by_match_category = ("SELECT match_category, AVG(fouls_sum) "
+                           "AS fouls_sum "
+                           "FROM csv_Meczyki_euro "
+                           "GROUP BY match_category "
+                           "ORDER BY match_category ")
